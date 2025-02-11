@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fce4ec;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #fff5f5;
+            border: 2px solid #ffccd5;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        .card:hover {
+            transform: rotateX(180deg);
+        }
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #d50000;
+            font-weight: bold;
+        }
+        .signature {
+            position: absolute;
+            bottom: -30px;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            color: #880e4f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" onclick="openCard()">
+        <div class="heart">❤️ ¿Querés ser mi San Valentín? ❤️</div>
+    </div>
+    <div class="signature">Atte: Pipi</div>
+</body>
+</html>

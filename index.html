@@ -4,76 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Valentín</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Glacial+Indifference&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-        
         body {
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #a60b0b;
-            font-family: 'Shrikhand', cursive;
-            overflow: hidden;
+            flex-direction: column;
+            background-image: url(https://github.com/SECRET2521/PIPITEAMO/blob/main/Queres%20ser%20mi%20San%20Valentin.png?raw=true); 
+            background-size: cover;
+            background-position: center;
+            font-family: 'Arial', sans-serif;
             color: white;
             text-align: center;
         }
-        .message {
-            font-size: 50px;
-            position: relative;
+        h1 {
+            font-family: 'Shrikhand', cursive;
+            font-size: 53.3px;
+            line-height: 1.4;
         }
-        .heart {
-            font-size: 80px;
-            color: #d50000;
-            margin-top: 10px;
+        p {
+            font-family: 'Glacial Indifference', sans-serif;
+            font-size: 24px;
+            letter-spacing: 2px;
         }
-        .signature {
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
+        .options {
+            margin-top: 20px;
+        }
+        .option {
+            margin: 10px;
             font-size: 20px;
-            color: white;
-            font-weight: bold;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 5px;
         }
-        .decorations {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-        .heart-bg {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: #ed90c9;
-            border-radius: 50%;
-            opacity: 0.6;
-            transform: rotate(-30deg);
-        }
-        .heart-outline {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border: 3px solid #ffdcf2;
-            border-radius: 50%;
-            transform: rotate(15deg);
-        }
-        .decorations div {
-            position: absolute;
+        .option:hover {
+            background-color: rgba(255, 255, 255, 0.9);
         }
     </style>
 </head>
 <body>
-    <div class="message">¿Querés ser mi San Valentín? 💕</div>
-    <div class="heart">❤️</div>
-    <div class="signature">Atte: Pipi</div>
-    <div class="decorations">
-        <div class="heart-bg" style="top: 20%; left: 10%;"></div>
-        <div class="heart-bg" style="top: 50%; left: 80%;"></div>
-        <div class="heart-bg" style="top: 70%; left: 30%;"></div>
-        <div class="heart-outline" style="top: 30%; left: 50%;"></div>
-        <div class="heart-outline" style="top: 60%; left: 20%;"></div>
-        <div class="heart-outline" style="top: 80%; left: 70%;"></div>
+    <h1>¿Querés<br> ser mi<br> San Valentín?</h1>
+    <p>PORFIS</p>
+    <div class="options">
+        <button class="option" id="yesBtn">Sí</button>
+        <button class="option" id="noBtn">No</button>
     </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        noBtn.addEventListener('mouseover', function() {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = mouseX + 'px';
+            noBtn.style.top = mouseY + 'px';
+        });
+    </script>
 </body>
 </html>

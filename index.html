@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Valentín</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        
         body {
             display: flex;
             justify-content: center;
@@ -12,45 +14,96 @@
             height: 100vh;
             background-color: #fce4ec;
             font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
-        .card {
+        .container {
             position: relative;
-            width: 300px;
-            height: 200px;
-            background-color: #fff5f5;
-            border: 2px solid #ffccd5;
-            border-radius: 10px;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
-            transition: transform 0.5s;
+            perspective: 1000px;
         }
-        .card:hover {
+        .card {
+            position: absolute;
+            width: 80vw;
+            height: 60vh;
+            background-color: #fff5f5;
+            border: 4px solid #ffccd5;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            transform-origin: top;
+            transition: transform 1s;
+        }
+        .container:hover .card {
             transform: rotateX(180deg);
         }
         .heart {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
+            font-size: 50px;
             color: #d50000;
             font-weight: bold;
+            margin-top: 20px;
+        }
+        .message {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            color: #d50000;
+            text-align: center;
         }
         .signature {
             position: absolute;
-            bottom: -30px;
+            bottom: 10px;
             width: 100%;
             text-align: center;
-            font-size: 18px;
+            font-size: 20px;
             color: #880e4f;
             font-weight: bold;
+        }
+        .decorations {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .decorations::before, .decorations::after {
+            content: '💖🌸💞🌷❤️💐';
+            position: absolute;
+            font-size: 24px;
+            animation: float 4s infinite alternate ease-in-out;
+        }
+        .decorations::before {
+            top: 10%;
+            left: 20%;
+        }
+        .decorations::after {
+            bottom: 10%;
+            right: 20%;
+        }
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
         }
     </style>
 </head>
 <body>
-    <div class="card" onclick="openCard()">
+    <div class="container">
+        <div class="card">
+            <div class="message">¿Querés ser mi San Valentín? 💕</div>
+            <div class="heart">❤️</div>
+        </div>
+        <div class="signature">Atte: Pipi</div>
+    </div>
+    <div class="decorations"></div>
+</body>
+</html>
+
         <div class="heart">❤️ ¿Querés ser mi San Valentín? ❤️</div>
     </div>
     <div class="signature">Atte: Pipi</div>
